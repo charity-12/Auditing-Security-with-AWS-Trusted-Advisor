@@ -9,7 +9,7 @@ I embarked on a hands-on project as part of a free lab provided by AWS. This pro
 Amazon Web Services (AWS) is a global leader in cloud computing, offering a multitude of powerful and versatile services. However, the power and versatility of AWS come with a corresponding need for diligent security measures. AWS Trusted Advisor is a fundamental tool in your arsenal for achieving this goal.
 
 AWS Trusted Advisor is an intelligent service that assesses your AWS environment, analyzing configurations and usage patterns. It identifies areas where security might be compromised, cost optimization could be achieved, performance could be enhanced, and fault tolerance could be increased.
-EOF
+
 
 # Objectives
 
@@ -17,7 +17,7 @@ Objectives:
 • Use Trusted Advisor to perform a basic audit of your AWS resources
 • Modify Amazon Elastic Compute Cloud (Amazon EC2) Security Groups to meet best practices
 • Configure Multi-factor Authentication (MFA) (Optional, requiring installation of software on a mobile device)
-EOF
+
 
 # Task description
 
