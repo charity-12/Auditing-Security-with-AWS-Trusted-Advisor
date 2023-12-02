@@ -63,6 +63,8 @@ I setup my MFA virtual Device (Google Authenticator) then I
 5. If I successfully logged in to the AWS Management Console, it indicated that the MFA virtual device had been integrated with IAM for "user-1." Following a successful login, I closed the browser's private window and returned to the original AWS Management Console page to continue the lab.
 
 Task 5: Exclude Security Groups if Unrestricted Access is Required
+
+
 Challenges I encountered
 1. Complex Security Group Configurations: Modifying Amazon EC2 Security Groups to align with best practices presented a challenge due to the complexity of the configurations in my environment. I had to carefully assess and plan the necessary rule changes to maintain security while ensuring that legitimate access was not disrupted. Managing numerous rules and verifying their correctness was time-consuming and required meticulous attention to detail.
 2. Resource Dependency and Impact: Making changes to security configurations and implementing Multi-factor Authentication (MFA) can have a ripple effect on various resources and users within the AWS environment. I had to consider the interdependencies between different resources and the potential impact of security changes on existing services. Ensuring that these changes didn't disrupt critical operations or lead to unintended consequences required careful planning and testing.
