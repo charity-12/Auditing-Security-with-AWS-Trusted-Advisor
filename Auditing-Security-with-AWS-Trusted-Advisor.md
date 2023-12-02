@@ -3,7 +3,7 @@
 # Auditing Your Security with AWS Trusted Advisor
 
 # Introduction
-cat <<EOF
+
 I embarked on a hands-on project as part of a free lab provided by AWS. This project aimed to offer practical experience and insights into AWS resources and best practices. Through a series of tasks and challenges, I delved into AWS Trusted Advisor, Amazon EC2 Security Groups, and the implementation of Multi-factor Authentication (MFA). These hands-on activities not only enriched my understanding of AWS but also allowed me to put theory into practice, improving my skills and knowledge in cloud management and security.
 
 Amazon Web Services (AWS) is a global leader in cloud computing, offering a multitude of powerful and versatile services. However, the power and versatility of AWS come with a corresponding need for diligent security measures. AWS Trusted Advisor is a fundamental tool in your arsenal for achieving this goal.
@@ -12,7 +12,7 @@ AWS Trusted Advisor is an intelligent service that assesses your AWS environment
 EOF
 
 # Objectives
-cat <<EOF
+
 Objectives:
 • Use Trusted Advisor to perform a basic audit of your AWS resources
 • Modify Amazon Elastic Compute Cloud (Amazon EC2) Security Groups to meet best practices
@@ -20,7 +20,7 @@ Objectives:
 EOF
 
 # Task description
-cat <<EOF
+
 Task description:
 Task 1: Check recommended actions with Trusted Advisor
 1. Accessed the AWS Management Console and used the search bar to look for 'Trusted Advisor.'
@@ -40,4 +40,47 @@ marked as "Red" in the Status column.
 8. Then, I clicked "Edit inbound rules" and followed these sub-steps:
 For the rule related to port 21, I selected "Delete" to the right of the rule.
 Finally, I selected "Save rules" to apply the changes.
+The output
+![image](https://github.com/charity-12/Auditing-Security-with-AWS-Trusted-Advisor/assets/93730840/b46d1975-46ab-4bed-ace2-c8ec2b5ad4b4)
+
+# Task 3: Modify Security Groups to Restrict Access
+
+Task 3: Modify Security Groups to Restrict Access
+1. I identified the "tcp/port 3306" security group that was flagged as "Red" by Trusted Advisor. This group was allowing unrestricted access to an Amazon RDS MySQL database on port 3306/tcp.
+2. I chose the "MySQL Security Group" link to open the Security Groups page.
+3. On the Security Groups page, I selected the "Inbound rules" tab.
+4. Then, I clicked "Edit inbound rules" and noticed that the rule was permitting incoming traffic to port 3306 from "0.0.0.0/0," which meant traffic was allowed from any computer on the Internet. This is considered poor security practice for a database.
+5. To improve security, I removed the rule for port 3306 by choosing "Delete" to the right of the rule.
+6. Next, I chose "Add rule" and followed these additional sub-steps:
+  - For "Type," I selected "MySQL/Aurora," and I noticed that the "Protocol" and "Port range" fields were automatically populated with "TCP 3306."
+  - For "Source," I chose "Custom," and in the search field, I entered "sg" and then selected the "Web Security Group."
+Output
+![image](https://github.com/charity-12/Auditing-Security-with-AWS-Trusted-Advisor/assets/93730840/eadb0738-44e5-4823-97cf-2330e8376676)
+
+# Task 4: Configure multi-factor authentication (MFA)
+cat <<EOF
+Task 4: Configure multi-factor authentication (MFA)
+I setup my MFA virtual Device (Google Authenticator) then I
+1. I opened a new private browser window and pasted the "Login URL" to access the AWS Management Console login page.
+2. On the AWS Management Console login page, I entered "user-1" for the IAM user name. I copied the "Administrator Password" value from the Resources pane and pasted it into the Password field. I clicked "Sign in" to proceed.
+3. The Multi-factor Authentication (MFA) page opened, and I entered the 6-digit code displayed in my MFA app for the "MFA Code."
+4. After entering the MFA code, I clicked "Submit."
+5. If I successfully logged in to the AWS Management Console, it indicated that the MFA virtual device had been integrated with IAM for "user-1." Following a successful login, I closed the browser's private window and returned to the original AWS Management Console page to continue the lab.
 EOF
+
+# Task 5: Exclude Security Groups if Unrestricted Access is Required
+
+Task 5: Exclude Security Groups if Unrestricted Access is Required
+Challenges I encountered
+1. Complex Security Group Configurations: Modifying Amazon EC2 Security Groups to align with best practices presented a challenge due to the complexity of the configurations in my environment. I had to carefully assess and plan the necessary rule changes to maintain security while ensuring that legitimate access was not disrupted. Managing numerous rules and verifying their correctness was time-consuming and required meticulous attention to detail.
+2. Resource Dependency and Impact: Making changes to security configurations and implementing Multi-factor Authentication (MFA) can have a ripple effect on various resources and users within the AWS environment. I had to consider the interdependencies between different resources and the potential impact of security changes on existing services. Ensuring that these changes didn't disrupt critical operations or lead to unintended consequences required careful planning and testing.
+
+# Conclusion
+
+Conclusion:
+In conclusion, I used AWS Trusted Advisor to perform a basic audit of my AWS resources. I also took the initiative to modify Amazon EC2 Security Groups to meet best practices, and I configured Multi-factor Authentication (MFA). These steps have significantly improved the security and management of my AWS resources.
+
+
+
+
+
