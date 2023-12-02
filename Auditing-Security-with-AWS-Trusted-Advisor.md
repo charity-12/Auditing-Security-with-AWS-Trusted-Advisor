@@ -43,8 +43,6 @@ Finally, I selected "Save rules" to apply the changes.
 The output
 ![image](https://github.com/charity-12/Auditing-Security-with-AWS-Trusted-Advisor/assets/93730840/b46d1975-46ab-4bed-ace2-c8ec2b5ad4b4)
 
-# Task 3: Modify Security Groups to Restrict Access
-
 Task 3: Modify Security Groups to Restrict Access
 1. I identified the "tcp/port 3306" security group that was flagged as "Red" by Trusted Advisor. This group was allowing unrestricted access to an Amazon RDS MySQL database on port 3306/tcp.
 2. I chose the "MySQL Security Group" link to open the Security Groups page.
@@ -57,8 +55,6 @@ Task 3: Modify Security Groups to Restrict Access
 Output
 ![image](https://github.com/charity-12/Auditing-Security-with-AWS-Trusted-Advisor/assets/93730840/eadb0738-44e5-4823-97cf-2330e8376676)
 
-# Task 4: Configure multi-factor authentication (MFA)
-cat <<EOF
 Task 4: Configure multi-factor authentication (MFA)
 I setup my MFA virtual Device (Google Authenticator) then I
 1. I opened a new private browser window and pasted the "Login URL" to access the AWS Management Console login page.
@@ -66,7 +62,7 @@ I setup my MFA virtual Device (Google Authenticator) then I
 3. The Multi-factor Authentication (MFA) page opened, and I entered the 6-digit code displayed in my MFA app for the "MFA Code."
 4. After entering the MFA code, I clicked "Submit."
 5. If I successfully logged in to the AWS Management Console, it indicated that the MFA virtual device had been integrated with IAM for "user-1." Following a successful login, I closed the browser's private window and returned to the original AWS Management Console page to continue the lab.
-EOF
+
 
 # Task 5: Exclude Security Groups if Unrestricted Access is Required
 
