@@ -21,7 +21,6 @@ Objectives:
 
 # Task description
 
-Task description:
 Task 1: Check recommended actions with Trusted Advisor
 1. Accessed the AWS Management Console and used the search bar to look for 'Trusted Advisor.'
 2. Selected the Trusted Advisor service from the list of search results.
